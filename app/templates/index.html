@@ -1,55 +1,44 @@
+{% import 'macros.html' as macro%}
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> News-Reel Website </title>
-        {% endif %}
-    </head>
-    <body>
-        <h1> {{title}} </h1>
-        <ul>
-            {% for source in general %}
-                <li>{{ source.name}}</li>
-            {% endfor %}
-        </ul> 
-        <ul>
-            {% for source in sports %}
-                <li>{{ source.name}}</li>
-            {% endfor %}
-        </ul> 
-        <ul>
-            {% for source in business %}
-                <li>{{ source.name}}</li>
-            {% endfor %}
-        </ul> 
-        <ul>
-            {% for source in technology %}
-                <li>{{ source.name}}</li>
-            {% endfor %}
-        </ul> 
-        <ul>
-            {% for source in science %}
-            <li>{{ source.name}} </li>
-            <li> {{source.description}}</li>
-            {% endfor %}
-        </ul> 
-        <ul>
-            {% for source in entertainment %}
-                <li>{{ source.name}}</li>
-            {% endfor %}
-        </ul> 
-        <ul>
-            {% for source in health %}
-                <li>{{ source.name}}</li>
-            {% endfor %}
-        </ul> 
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> News-Reel Website </title>
+    {% endif %}
+</head>
+
+<body>
+    <h1> {{title}} </h1>
+    <div>
+
+    </div>
+    <div>
+        <hr>
+        {{ macro.displaySourceList(general)}}
+    </div>
+    <div>
+        <hr>
+        {{ macro.displaySourceList(business)}}
+    </div>
+    <div>
+        <hr>
+        {{ macro.displaySourceList(technology)}}
+    </div>
+    <div>
+        <hr>
+            {{ macro.displaySourceList(science)}}
+            {{ macro.displaySourceList(health)}}
+        </div>
+    <div>
+        <hr>
+        {{ macro.displaySourceList(entertainment)}}
+    </div>
+
+</body>
+
 </html>
-
-
-
-
-
