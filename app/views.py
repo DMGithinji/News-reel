@@ -21,3 +21,13 @@ def categorized_sources(category):
     '''
 
     return render_template('categorized-source.html',category = category)
+
+
+@app.route('/source/<category>/<source>')
+def source_articles(category, source):
+
+    '''
+    View sources page function that returns articles from a particular source
+    '''
+
+    return render_template('source-articles.html',category = category, source = source)
