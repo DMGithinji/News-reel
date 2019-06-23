@@ -1,5 +1,7 @@
 from flask import render_template
 from app import app
+from .requests import get_sources
+
 
 # Views
 @app.route('/')
@@ -10,15 +12,15 @@ def index():
     '''
 
     title = 'There are various examples of sources-based-on-category on this page'
-    general = 'General'
-    business = 'Business'
-    technology = 'Technology'
-    entertainment = 'Entertainment'
-    politics = 'Politics'
-    health = 'Health'
-    sports = 'Sports'
+    general = get_sources('general')
+    business = get_sources('business')
+    technology = get_sources('technology')
+    entertainment = get_sources('entertainment')
+    science = get_sources('science')
+    health = get_sources('health')
+    sports = get_sources('sports')
 
-    return render_template('index.html', title = title, general = general, business = business, technology = technology, sports = sports, health = health, entertainment = entertainment, politics = politics)
+    return render_template('index.html', title = title, general = general, business = business, technology = technology, sports = sports, health = health, entertainment = entertainment, science = science)
 
 @app.route('/source_category/<category>')
 def categorized_sources(category):
