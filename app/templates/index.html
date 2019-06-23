@@ -1,22 +1,12 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
-<!DOCTYPE html>
-<html>
+<!-- Content block -->
+{% block content %}
 
-<head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title> {{ title }}</title>
-    {% else %}
-    <title> News-Reel Website </title>
-    {% endif %}
-</head>
 
-<body>
     <h1> {{title}} </h1>
-    <div>
 
-    </div>
     <div>
         <hr>
         {{ macro.displaySourceList(general)}}
@@ -31,17 +21,14 @@
         <hr>
         {{ macro.displaySourceList(technology)}}
     </div>
-
+    
     <div>
         <hr>
         {{ macro.displaySourceList(science)}}
     </div>
-    
     <div>
         <hr>
         {{ macro.displaySourceList(entertainment)}}
     </div>
 
-</body>
-
-</html>
+{% endblock%}

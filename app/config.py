@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    CATEGORIZED_SOURCE_BASE_URL = 'https://newsapi.org/v2/sources?language=en&category={}&apiKey={}'
+    CATEGORIZED_SOURCE_BASE_URL = 'https://newsapi.org/v2/sources?language=en&category={}&sortBy=popularity&apiKey={}'
     SOURCE_NEWS_BASE_URL = "https://newsapi.org/v2/top-headlines?language=en&sources={}&apiKey={}"
     SEARCH_NEWS_BASE_URL = 'https://newsapi.org/v2/everything?q={}&sortBy=popularity&page=1&pageSize=10&apiKey={}'
 

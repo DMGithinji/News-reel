@@ -31,7 +31,7 @@ def categorized_sources(category):
     categorizedSources = get_sources(category)
     title = f'{categorizedSources[0].category}'
 
-    return render_template('categorized-source.html',title = title, categorizedSources = categorizedSources)
+    return render_template('categorized-source.html',title = title, sources = sources)
 
 
 @app.route('/source/<sourceName>')
