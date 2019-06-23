@@ -13,3 +13,11 @@ def index():
 
     return render_template('index.html', source = source)
 
+@app.route('/source/<category>')
+def categorized_sources(category):
+
+    '''
+    View categorized sources page function that returns sources that are categorized based on news topics
+    '''
+
+    return render_template('categorized-source.html',category = category)
