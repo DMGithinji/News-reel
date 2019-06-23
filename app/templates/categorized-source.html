@@ -1,1 +1,7 @@
-<h1> {{ category }} News Sources </h1>
+{% import 'macros.html' as macro%}
+
+<h1> {{ title }} News Sources </h1>
+<div>
+    <hr>
+    {{ macro.displayCategorizedSourceList(categorizedSources)}}
+</div>

@@ -3,7 +3,22 @@
     {% for source in source_list %}
         <div>
             {{ source.name}} - {{source.description}} <br>
-            {{source.urlLink}}
+        </div>
+    {% endfor %}
+
+    {% if source_list|length > 3 %}
+        <div class="text-center">
+            <a href="/source_category/{{source_list[0].category}}">See more sources covering {{source_list[0].category}} topics</a>
+        </div>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro displayCategorizedSourceList(sources) %}
+
+    {% for source in sources %}
+        <div>
+            {{ source.name}} - {{source.description}} <br>
         </div>
     {% endfor %}
 
