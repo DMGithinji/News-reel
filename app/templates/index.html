@@ -1,8 +1,26 @@
-<h1> {{title}} </h1>
-<h4> {{general}} </h4>
-<h4> {{business}} </h4>
-<h4> {{technology}} </h4>
-<h4> {{politics}} </h4>
-<h4> {{sports}} </h4>
-<h4> {{entertainment}} </h4>
-<h4> {{health}} </h4>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> News-Reel Website </title>
+        {% endif %}
+    </head>
+    <body>
+        <h1> {{title}} </h1>
+        <h4> {{general}} </h4>
+        <h4> {{business}} </h4>
+        <h4> {{technology}} </h4>
+        <h4> {{politics}} </h4>
+        <h4> {{sports}} </h4>
+        <h4> {{entertainment}} </h4>
+        <h4> {{health}} </h4>
+    </body>
+</html>
+
+
+
+
+
