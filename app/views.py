@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .requests import get_sources
+from .requests import get_sources, get_news
 
 
 # Views
@@ -28,22 +28,25 @@ def categorized_sources(category):
     View categorized sources page function that returns sources that are categorized based on news topics.
     Utilizes the source_base_url API endpoint
     '''
-    categorizedSources = get_sources(category)
-    title = f'{categorizedSources[0].category}'
+    sources = get_sources(category)
+    title = f'{sources[0].category}'
 
     return render_template('categorized-source.html',title = title, sources = sources)
 
 
-@app.route('/source/<sourceName>')
-def source_articles(sourceName):
+@app.route('/source/<sourceId>')
+def source_articles(sourceId):
 
     '''
     View source page function that returns articles from a particular source
     Utilizes the articles_base url API endpoint
 
     '''
+    news_list = get_news(sourceId)
+    title = f'{sourceId}'
 
-    return render_template('source-articles.html', sourceName = sourceName)
+
+    return render_template('source-articles.html', news_list = news_list, title = title)
 
 @app.route('/source/<sourceName>/<title>')
 def article(sourceName,title):

@@ -1,1 +1,9 @@
-<h1> {{ sourceName }} Articles </h1>
+
+<h1>Articles from {{title}}</h1>
+{% for news_article in news_list %}
+<div>
+    {{ news_article.title}} - {{news_article.author}} <br>
+    {{news_article.publishedAt}}
+    
+</div>
+{% endfor %}

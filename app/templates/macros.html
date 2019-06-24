@@ -20,6 +20,10 @@
         <div>
             {{ source.name}} - {{source.description}} <br>
         </div>
+        <div class="text-center">
+            <a href="/source/{{source.id}}">View news from {{source.name}}</a>
+        </div>
     {% endfor %}
 
 {% endmacro %}
+
