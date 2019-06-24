@@ -48,12 +48,12 @@ def source_articles(sourceId):
 
     return render_template('source-articles.html', news_list = news_list, title = title)
 
-@app.route('/source/<sourceName>/<title>')
-def article(sourceName,title):
+@app.route('/source/<article_title>')
+def article(article_title):
 
     '''
     View sources page function that returns an article from a particular source
     Utilizes the articles_base url API endpoint
     '''
 
-    return render_template('articles.html',title = title, sourceName = sourceName)
+    return render_template('articles.html',article_title = article_title)

@@ -1,9 +1,20 @@
+{% extends 'base.html'%}
 
+<!-- Content block -->
+{% block content %}
 <h1>Articles from {{title}}</h1>
 {% for news_article in news_list %}
 <div>
-    {{ news_article.title}} - {{news_article.author}} <br>
+    {{ news_article.article_title}} <br>
+    {{news_article.author}} <br>
+    {{news_article.urlToImage}} <br>
+    {{news_article.description}}
     {{news_article.publishedAt}}
-    
+    {{news_article.nameSource}}
+    <div class="text-center">
+        <a href="/source/{{news_article.article_title}}">Read More</a>
+    </div>
 </div>
 {% endfor %}
+
+{% endblock%}
