@@ -1,10 +1,10 @@
-from flask import render_template
-from app import app
-from .requests import get_sources, get_news
+from flask import render_template,request,redirect,url_for
+from . import main
+from ..requests import get_sources, get_news
 
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -21,7 +21,7 @@ def index():
 
     return render_template('index.html', title = title, general = general, business = business, technology = technology, sports = sports, entertainment = entertainment, science = science)
 
-@app.route('/source_category/<category>')
+@main.route('/source_category/<category>')
 def categorized_sources(category):
 
     '''
@@ -34,7 +34,7 @@ def categorized_sources(category):
     return render_template('categorized-source.html',title = title, sources = sources)
 
 
-@app.route('/source/<sourceId>')
+@main.route('/source/<sourceId>')
 def source_articles(sourceId):
 
     '''
@@ -48,7 +48,7 @@ def source_articles(sourceId):
 
     return render_template('source-articles.html', news_list = news_list, title = title)
 
-@app.route('/source/<article_title>')
+@main.route('/source/<article_title>')
 def article(article_title):
 
     '''

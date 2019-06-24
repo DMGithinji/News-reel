@@ -1,15 +1,20 @@
-from app import app
 import urllib.request,json
-from .models import categorized_sources_model, news
+from .models import Source
+from .models import News
 
-Source = categorized_sources_model.Source
-News = news.News
 # Getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 
-# Getting the movie base url
-sources_base_url = app.config["CATEGORIZED_SOURCE_BASE_URL"]
-news_base_url = app.config["SOURCE_NEWS_BASE_URL"]
+# Getting the base urls
+
+sources_base_url = None
+news_base_url = None
+
+def configure_request(app):
+    global api_key, sources_base_url, news_base_url
+    api_key = app.config['API_KEY']
+    sources_base_url = app.config["CATEGORIZED_SOURCE_BASE_URL"]
+    news_base_url = app.config["SOURCE_NEWS_BASE_URL"]
 
 def get_sources(category):
     '''
