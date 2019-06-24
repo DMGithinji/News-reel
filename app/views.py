@@ -55,5 +55,7 @@ def article(article_title):
     View sources page function that returns an article from a particular source
     Utilizes the articles_base url API endpoint
     '''
+    article_list = get_news(sourceId)
+    article_title = f'{news_list.article_title}'
 
     return render_template('articles.html',article_title = article_title)

@@ -1,3 +1,18 @@
-<!--<h1> {{ category }} News Source </h1>-->
-<h1> {{ sourceName }} Article </h1>
-<h3> {{ title }} Articles </h3>
+
+{% extends 'base.html'%}
+
+<!-- Content block -->
+{% block content %}
+<h1>Articles from {{title}}</h1>
+{% for news_article in article_list %}
+<div>
+    {{ news_article.article_title}} <br>
+    {{news_article.author}} <br>
+    {{news_article.urlToImage}} <br>
+    {{news_article.description}}
+    {{news_article.publishedAt}}
+    {{news_article.content}}
+</div>
+{% endfor %}
+
+{% endblock%}

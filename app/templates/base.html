@@ -1,19 +1,25 @@
 {% extends 'bootstrap/base.html'%}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best Movie Review website </title>
-        {% endif %}
-    </head>
-    <body>
-        <!-- Content block -->
 
-        {% block content %}
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Stay Updated. Get All Your News From News-Reel </title>
+    {% endif %}
+</head>
 
-        {% endblock%}
-    </body>
+<body>
+    {% block navbar %}
+        {% include 'navbar.html'%}
+    {% endblock %}
+    <!-- Content block -->
+
+    {% block content %}
+
+    {% endblock%}
+</body>
+
 </html>
