@@ -7,7 +7,12 @@
 <h1> {{ title }} News Sources </h1>
 <div>
     <hr>
-    {{ macro.displayCategorizedSourceList(sources)}}
-</div>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                {{ macro.displayCategorizedSourceList(sources)}}
+            </div>
+        </div>
+    </div>
 
-{% endblock%}
+    {% endblock%}

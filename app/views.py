@@ -11,7 +11,7 @@ def index():
     View root page function that returns the index page and its data
     '''
 
-    title = 'There are various examples of sources-based-on-category on this page'
+    title = 'News-Reel'
     general = get_sources('general')
     business = get_sources('business')
     technology = get_sources('technology')
@@ -58,4 +58,4 @@ def article(article_title):
     article_list = get_news(sourceId)
     article_title = f'{news_list.article_title}'
 
-    return render_template('articles.html',article_title = article_title)
+    return render_template('articles.html',article_title = article_title, article_list = article_list)
