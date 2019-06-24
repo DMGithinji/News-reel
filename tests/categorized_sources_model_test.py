@@ -1,5 +1,5 @@
 import unittest
-from categorized_sources_model import Source
+from app.models import categorized_sources_model
 
 class SourcesTest(unittest.TestCase):
     '''

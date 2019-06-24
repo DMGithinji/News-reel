@@ -1,81 +1,85 @@
 {% macro displaySourceList(source_list) %}
-    {% for source in source_list%}
-    <div class="col-md-4 single-source">
-        <div class="row">
-            <div class="col-md-4 source-name">
-                <h3> {{source.name}} </h3>
-            </div>
-            <div class="col-md-7 source-details">
-                <p> {{source.description|truncate(150)}}
-                    <br>
-                    <a href="/source/{{source.id}}">Read Articles</a>
-                    <br>
-                    <a href="{{source.urlLink}}">Visit Source Site</a>
-                </p>
-            </div>
+{% for source in source_list%}
+<div class="col-md-4 single-source">
+    <div class="row">
+        <div class="col-md-4 source-name">
+            <h3> {{source.name}} </h3>
+        </div>
+        <div class="col-md-7 source-details">
+            <p> {{source.description|truncate(150)}}
+                <br>
+                <a href="/source/{{source.id}}">Read Articles</a>
+                <br>
+                <a href="{{source.urlLink}}">Visit Source Site</a>
+            </p>
         </div>
     </div>
-    {% endfor %}
+</div>
+{% endfor %}
 
-    {% if source_list|length > 3 %}
-    <div class="text-center">
-        <a href="/source_category/{{source_list[0].category}}">See more sources covering {{source_list[0].category}}
-            topics</a>
-    </div>
-    {% endif %}
+{% if source_list|length > 3 %}
+<div class="text-center">
+    <a href="/source_category/{{source_list[0].category}}">See more sources covering {{source_list[0].category}}
+        topics</a>
+</div>
+{% endif %}
 
 {% endmacro %}
 
 {% macro displayCategorizedSourceList(sources) %}
-    {% for source in sources %}
-    <div class="col-xs-12 col-sm-4">
-        <div class="card">
-            <div class="card-content">
-                <h4 class="card-title">
-                        {{source.name}}
-                </h4>
-                <p class="">
-                    {{source.description}}
-                </p>
-            </div>
-            <div class="card-read-more">
-                <a href="/source/{{source.id}}"
-                    class="btn btn-link btn-block">
-                    View Articles from {{source.name}}
-                </a>
-            </div>
+{% for source in sources %}
+<div class="col-xs-12 col-sm-4">
+    <div class="card">
+        <div class="card-content">
+            <h4 class="card-title">
+                {{source.name}}
+            </h4>
+            <p class="">
+                {{source.description | truncate(100) }}
+            </p>
+        </div>
+        <div class="card-read-more">
+            <a href="/source/{{source.id}}" class="btn btn-link btn-block">
+               More from {{source.name}}
+            </a>
         </div>
     </div>
-    {% endfor %}
+</div>
+{% endfor %}
 
 {% endmacro %}
 
 
 {% macro displayArticles(news_list) %}
-    {% for news_article in news_list %}
-    <div class="col-xs-12 col-sm-4">
-            <div class="card">
-                <a class="img-card" href="{{news_article.url}}">
-                    <img src="{{news_article.urlToImage}}" />
+{% for news_article in news_list %}
+<div class="col-xs-12 col-sm-4">
+    <div class="card">
+        <a class="img-card" href="{{news_article.url}}">
+            <img src="{{news_article.urlToImage}}" />
+        </a>
+        <div class="card-content">
+            <h4 class="card-title">
+                <a href="{{news_article.url}}">
+                    {{news_article.article_title}}
                 </a>
-                <div class="card-content">
-                    <h4 class="card-title">
-                        <a href="{{news_article.url}}">
-                            {{news_article.article_title}}
-                        </a>
-                    </h4>
-                    <p class="">
-                        {{news_article.description}}
-                    </p>
-                </div>
-                <div class="card-read-more">
-                    <a href="{{news_article.url}}"
-                        class="btn btn-link btn-block">
-                        Read Story
-                    </a>
-                </div>
-            </div>
+            </h4>
+            <p class="">
+                {{news_article.description }}
+            </p>
+            <p class="">
+                <strong>Written by: {{news_article.author}}</strong> 
+            </p>
+            <p class="">
+                {{news_article.publishedAt}}
+            </p>
         </div>
-    {% endfor %}
+        <div class="card-read-more">
+            <a href="{{news_article.url}}" class="btn btn-link btn-block">
+                Read Story
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}
 
 {% endmacro %}
