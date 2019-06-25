@@ -1,9 +1,18 @@
-h1 {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    font-size: 70px;
-    word-wrap: break-word;
-    color: white
+.navbar .dropdown-menu a:hover {
+    color: #d1d1d1 !important;
+    background-color: #1B2331 !important;
+}
+
+.darken-grey-text {
+    color: #2E2E2E;
+}
+
+.read {
+    background-color: #1B2331;
+}
+
+.navbar-brand{
+    font-size: 30px;
 }
 
 .categories {
@@ -20,7 +29,7 @@ h1 {
     padding-bottom: 1rem;
     border-radius: 8px;
     background-color: #fff;
-    height: 100px;
+    height: auto;
 }
 
 .source-name {

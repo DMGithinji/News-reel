@@ -1,16 +1,16 @@
 {% macro displaySourceList(source_list) %}
 {% for source in source_list%}
-<div class="col-md-4 single-source">
+<div class="col-md-4 single-source"  style = 'height: auto; background-color: #fff;  box-shadow: 2px 4px 12px 2px #DCDCDC; margin: 1rem; padding-top: 1rem; padding-bottom: 1rem; border-radius: 8px;'>
     <div class="row">
         <div class="col-md-4 source-name">
             <h3> {{source.name}} </h3>
         </div>
-        <div class="col-md-7 source-details">
+        <div class="col-md-8 source-details">
             <p> {{source.description|truncate(150)}}
                 <br>
-                <a href="/source/{{source.id}}">Read Articles</a>
+                <a href="/source/{{source.id}}"  style = "text-decoration: none; font-weight: 600; color: #444;">Read Articles</a>
                 <br>
-                <a href="{{source.urlLink}}">Visit Source Site</a>
+                <a href="{{source.urlLink}}"  style = "text-decoration: none; font-weight: 600; color: #444;">Visit Source Site</a>
             </p>
         </div>
     </div>
@@ -18,9 +18,8 @@
 {% endfor %}
 
 {% if source_list|length > 3 %}
-<div class="text-center">
-    <a href="/source_category/{{source_list[0].category}}">See more sources covering {{source_list[0].category}}
-        topics</a>
+<div class=" container text-center" style = "text-decoration: none; font-weight: 600; color: #444;">
+    <a href="/source_category/{{source_list[0].category}}"><h3>See more {{source_list[0].category}} news sources</h3></a>
 </div>
 {% endif %}
 
@@ -39,7 +38,7 @@
             </p>
         </div>
         <div class="card-read-more">
-            <a href="/source/{{source.id}}" class="btn btn-link btn-block">
+            <a href="/source/{{source.id}}" class="btn btn-link btn-block"  style = "text-decoration: none; font-size: 10px; font-weight: 600; color: #d2d2d2; background-color: #1B2331;">
                More from {{source.name}}
             </a>
         </div>
@@ -73,8 +72,8 @@
                 {{news_article.publishedAt}}
             </p>
         </div>
-        <div class="card-read-more">
-            <a href="{{news_article.url}}" class="btn btn-link btn-block">
+        <div class="card-read-more"  style = "text-decoration: none; font-weight: 600; color: #333;">
+            <a href="{{news_article.url}}" class="btn btn-link btn-block"  style = " font-size: 12px; color: #333 !important;">
                 Read Story
             </a>
         </div>
